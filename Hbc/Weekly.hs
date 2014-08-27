@@ -1,13 +1,17 @@
 {-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE OverloadedStrings #-}
-module Main (main) where
+module Hbc.Weekly (
+                   runBot
+                  ) where
+
+import Hbc.Scraper
+import Hbc.SimpleDate
 
 import Data.Char (ord)
 import Control.Applicative
 import Data.Ord (comparing)
 import Data.Maybe (fromMaybe)
-import Data.Monoid ((<>), mempty)
-import Data.Word (Word8)
+import Data.Monoid ((<>))
 import Control.Monad.Except
 
 import qualified Data.Vector as V
@@ -17,17 +21,7 @@ import Data.Map.Strict (Map)
 
 import qualified Data.ByteString.Lazy as BL
 import Data.ByteString.Lazy (ByteString)
-import Blaze.ByteString.Builder (fromByteString, fromWord8, toLazyByteString)
 import Data.Attoparsec.ByteString.Lazy
-import Data.Attoparsec.ByteString.Char8 (decimal)
-import Data.Csv (decodeWith, HasHeader(..), DecodeOptions(..),
-                 defaultDecodeOptions)
-
-
-import Network.HTTP
-import Network.URI (parseURI)
-
-type CsvData = Vector (Vector ByteString)
 
 data WeeklySpreadsheet = Table1
                        | Table2
@@ -41,38 +35,20 @@ data DataPoint = DataPoint { sheet       :: !WeeklySpreadsheet,
                              code        :: !ByteString
                            } deriving (Eq, Show)
 
-urls :: [(WeeklySpreadsheet, String)]
-urls = [
-         (Table1, "http://ir.eia.gov/wpsr/table1.csv")
-       , (Table2, "http://ir.eia.gov/wpsr/table2.csv")
-       , (Table3, "http://ir.eia.gov/wpsr/table3.csv")
-       , (Table7, "http://ir.eia.gov/wpsr/table7.csv")
-       , (Table9, "http://ir.eia.gov/wpsr/table9.csv")
-       ]
-
-
-type GetData a = ExceptT String IO a
+weeklyURLs :: [(WeeklySpreadsheet, String)]
+weeklyURLs = [
+               (Table1, "http://ir.eia.gov/wpsr/table1.csv")
+             , (Table2, "http://ir.eia.gov/wpsr/table2.csv")
+             , (Table3, "http://ir.eia.gov/wpsr/table3.csv")
+             , (Table7, "http://ir.eia.gov/wpsr/table7.csv")
+             , (Table9, "http://ir.eia.gov/wpsr/table9.csv")
+             ]
 
 type LatestColumns = Map WeeklySpreadsheet (Vector ByteString)
 
-getData :: GetData LatestColumns
-getData = foldM addSpreadsheet M.empty urls
+getWeeklys :: GetData LatestColumns
+getWeeklys = M.mapWithKey getLatestColumn <$> getSpreadsheets weeklyURLs
   where
-      addSpreadsheet acc (table, url) = do
-          response <- getURL url
-          csv <- decode response
-          let col = getLatestColumn table csv
-          return $ M.insert table col acc
-      getURL url = case parseURI url of
-                   Nothing  -> throwError $ "Invalid URL: " ++ url
-                   Just uri -> do
-                       resp <- liftIO . simpleHTTP $ defaultGETRequest_ uri
-                       liftIO $ getResponseBody resp
-      decode = either throwError return . decodeCommaSeparated
-      decodeCommaSeparated = decodeWith opts NoHeader
-        where
-            opts = defaultDecodeOptions { decDelimiter = comma }
-            comma = fromIntegral (ord ',')
       getLatestColumn :: WeeklySpreadsheet -> CsvData -> Vector ByteString
       getLatestColumn Table1 csv = let (a, b) = V.splitAt 20 csv in
                                         latestC a <> latestC b
@@ -82,19 +58,6 @@ getData = foldM addSpreadsheet M.empty urls
             latestI = V.maxIndexBy (comparing parseDate) (csv ! 0)
             parseDate = maybeResult . parse parseSimpleDate
 
-data SimpleDate = Date { sMonth :: !Int
-                       , sDay   :: !Int
-                       , sYear  :: !Int
-                       } deriving (Eq, Show, Read)
-
-instance Ord SimpleDate where
-        compare (Date m d y) (Date m' d' y') = compare (y, m, d) (y', m', d')
-
-parseSimpleDate :: Parser SimpleDate
-parseSimpleDate = Date <$> decimal <* sep <*> decimal <* sep <*> decimal
-  where
-    sep = word8 . fromIntegral $ ord '/'
-
 getDataPoint :: LatestColumns -> DataPoint -> Maybe ByteString
 getDataPoint cs (DataPoint { sheet = s, rowI = i }) = M.lookup s cs >>= (!? i)
 
@@ -103,12 +66,6 @@ getADate cs = getDate Table1 <|> getDate Table2 <|> getDate Table3 <|>
               getDate Table7 <|> getDate Table9
   where
       getDate t = M.lookup t cs >>= (!? 0)
-
-data ResultColumn = ResultColumn {
-                                   rCode        :: !ByteString
-                                 , rDescription :: !ByteString
-                                 , rValue       :: !ByteString
-                                 } deriving (Eq, Show)
 
 getResult :: LatestColumns -> DataPoint -> Maybe ResultColumn
 getResult cs d@(DataPoint { description = desc, code = c }) =
@@ -127,29 +84,9 @@ getOutRows date rs = [codes, descs, vals]
       enc = BL.intercalate ","
       esc = escape (fromIntegral (ord ','))
 
--- yanked from cassava
-escape :: Word8 -> ByteString -> ByteString
-escape !delim !s
-    | BL.any (\ b -> b == dquote || b == delim || b == nl || b == cr || b == sp)
-        s = toLazyByteString $
-            fromWord8 dquote
-            <> BL.foldl
-                (\ acc b -> acc <> if b == dquote
-                    then fromByteString "\"\""
-                    else fromWord8 b)
-                mempty
-                s
-            <> fromWord8 dquote
-    | otherwise = s
-  where
-    dquote = 34
-    nl     = 10
-    cr     = 13
-    sp     = 32
-
 runBot :: FilePath -> GetData ()
 runBot fpath = do
-        r <- getData
+        r <- getWeeklys
         date <- maybe' "Could not find date" $ getADate r
         result <- maybe' "Could not find all columns" $ getResults' dataPoints r
         let out = BL.intercalate "\n" $ getOutRows date result
@@ -157,14 +94,6 @@ runBot fpath = do
   where
       maybe' e = maybe (throwError e) return
       getResults' = flip getResults
-
-
-main :: IO ()
-main = do
-        result <- runExceptT $ runBot "0 Weekly Bot Output.csv"
-        case result of
-            Left e  -> putStrLn $ "Error: " ++ e
-            _       -> putStrLn "Success!"
 
 dataPoints :: [DataPoint]
 dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,

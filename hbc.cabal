@@ -46,9 +46,33 @@ build-type:          Simple
 cabal-version:       >=1.10
 
 
-executable hbc
+library
+  exposed-modules:     Hbc.Scraper,
+                       Hbc.Weekly,
+                       Hbc.Monthly,
+                       Hbc.SimpleDate
+  build-depends:
+    base >=4.7 && <4.8,
+    HTTP == 4000.2.17,
+    cassava,
+    vector,
+    network,
+    containers,
+    text,
+    bytestring,
+    attoparsec,
+    transformers,
+    mtl,
+    blaze-builder
+
+  ghc-options: -Wall -fno-warn-unused-do-bind
+
+  -- Base language which the package is written in.
+  default-language:    Haskell2010
+
+executable weekly
   -- .hs or .lhs file containing the Main module.
-  main-is: Hbc/Scraper/Main.hs
+  main-is: Hbc/Weekly/Main.hs
 
   -- Modules included in this executable, other than Main.
   -- other-modules:
@@ -58,6 +82,7 @@ executable hbc
 
   -- Other library packages from which modules are imported.
   build-depends:
+    hbc,
     base >=4.7 && <4.8,
     HTTP == 4000.2.17,
     cassava,
