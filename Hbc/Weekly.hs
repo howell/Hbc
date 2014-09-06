@@ -7,7 +7,6 @@ module Hbc.Weekly (
 import Hbc.Scraper
 import Hbc.SimpleDate
 
-import Data.Char (ord)
 import Control.Applicative
 import Data.Ord (comparing)
 import Data.Maybe (fromMaybe)
@@ -73,16 +72,6 @@ getResult cs d@(DataPoint { description = desc, code = c }) =
 
 getResults :: LatestColumns -> [DataPoint] -> Maybe [ResultColumn]
 getResults cols = sequence . fmap (getResult cols)
-
--- ByteString is the date
-getOutRows :: ByteString -> [ResultColumn] -> [ByteString]
-getOutRows date rs = [codes, descs, vals]
-  where
-      codes = enc $ ""     : fmap (esc . rCode) rs
-      descs = enc $ "Date" : fmap (esc . rDescription) rs
-      vals  = enc $ date   : fmap (esc . rValue) rs
-      enc = BL.intercalate ","
-      esc = escape (fromIntegral (ord ','))
 
 runBot :: FilePath -> GetData ()
 runBot fpath = do

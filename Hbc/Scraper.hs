@@ -8,6 +8,7 @@ module Hbc.Scraper (
                    , getURL
                    , decode
                    , ResultColumn(..)
+                   , getOutRows
                    , escape
                    ) where
 
@@ -63,6 +64,17 @@ data ResultColumn = ResultColumn {
                                  , rDescription :: !ByteString
                                  , rValue       :: !ByteString
                                  } deriving (Eq, Show)
+
+-- ByteString is the date
+getOutRows :: ByteString -> [ResultColumn] -> [ByteString]
+getOutRows date rs = [codes, descs, vals]
+  where
+      codes = enc $ ""     : fmap (esc . rCode) rs
+      descs = enc $ "Date" : fmap (esc . rDescription) rs
+      vals  = enc $ date   : fmap (esc . rValue) rs
+      enc = BL.intercalate ","
+      esc = escape (fromIntegral (ord ','))
+
 
 -- yanked from cassava
 escape :: Word8 -> ByteString -> ByteString
