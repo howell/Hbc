@@ -62,7 +62,8 @@ monthlyURLs = [
               ]
 
 dataPoints :: [DataPoint]
-dataPoints = concat [table1, table5, table9, table13, table17, table21]
+dataPoints = concat [table1, table5, table9, table13, table17, table21,
+                     additions_9_14]
   where
       table1 = [
                  DataPoint MonthlyTable1 14 2 "U.S. Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)" "M_EPOOXE_YNP_NUS_MBBL"
@@ -129,4 +130,13 @@ dataPoints = concat [table1, table5, table9, table13, table17, table21]
                 , DataPoint MonthlyTable21 14 11 "West Coast (PADD 5) Ending Stocks of Fuel Ethanol (Thousand Barrels)" "MFESTP51"
                 , DataPoint MonthlyTable21 23 10 "West Coast (PADD 5) Product Supplied of Finished Motor Gasoline (Thousand Barrels)" "MGFUPP51"
                 ]
+      additions_9_14 = [
+                        DataPoint MonthlyTable1 17 8 "U.S. Exports of Unfinished Oils (Thousand Barrels)" "MUOEXUS1"
+                      , DataPoint MonthlyTable1 18 8 "U.S. Exports of Gasoline Blending Components (Thousand Barrels)" "MBCEXUS1"
+                      , DataPoint MonthlyTable1 19 8 "U.S. Exports of Reformulated Gasoline Blending Components (Thousand Barrels)" "MO1EX_NUS-Z00_1"
+                      , DataPoint MonthlyTable1 20 8 "U.S. Exports of Conventional Gasoline Blending Components (Thousand Barrels)" "MO5EX_NUS-Z00_1"
+                      , DataPoint MonthlyTable1 23 8 "U.S. Exports of Finished Motor Gasoline (Thousand Barrels)" "MGFEXUS1"
+                      , DataPoint MonthlyTable1 24 8 "U.S. Exports of Reformulated Motor Gasoline (Thousand Barrels)" "MGREXUS1"
+                      , DataPoint MonthlyTable1 25 8 "U.S. Exports of Conventional Motor Gasoline (Thousand Barrels)" "MG4EX_NUS-Z00_1"
+                      ]
 
