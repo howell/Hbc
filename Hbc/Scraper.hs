@@ -7,6 +7,7 @@ module Hbc.Scraper (
                    , getSpreadsheets
                    , getURL
                    , decode
+                   , exceptT
                    , ResultColumn(..)
                    , getOutRows
                    , escape
@@ -53,11 +54,14 @@ getURL url = case parseURI url of
                      liftIO $ getResponseBody resp
 
 decode :: ByteString -> GetData CsvData
-decode = either throwError return . decodeCommaSeparated
+decode = exceptT . decodeCommaSeparated
   where
       decodeCommaSeparated = decodeWith opts NoHeader
       opts = defaultDecodeOptions { decDelimiter = comma }
       comma = fromIntegral (ord ',')
+
+exceptT :: MonadError a m => Either a a1 -> m a1
+exceptT = either throwError return
 
 data ResultColumn = ResultColumn {
                                    rCode        :: !ByteString

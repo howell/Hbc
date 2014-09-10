@@ -58,7 +58,9 @@ getWeeklys = M.mapWithKey getLatestColumn <$> getSpreadsheets weeklyURLs
             parseDate = maybeResult . parse parseSimpleDate
 
 getDataPoint :: LatestColumns -> DataPoint -> Maybe ByteString
-getDataPoint cs (DataPoint { sheet = s, rowI = i }) = M.lookup s cs >>= (!? i)
+getDataPoint cs (DataPoint { sheet = s, rowI = i }) = do
+        column <- M.lookup s cs
+        column !? i
 
 getADate :: LatestColumns -> Maybe ByteString
 getADate cs = getDate Table1 <|> getDate Table2 <|> getDate Table3 <|>
@@ -66,22 +68,24 @@ getADate cs = getDate Table1 <|> getDate Table2 <|> getDate Table3 <|>
   where
       getDate t = M.lookup t cs >>= (!? 0)
 
-getResult :: LatestColumns -> DataPoint -> Maybe ResultColumn
+getResult :: LatestColumns -> DataPoint -> Either String ResultColumn
 getResult cs d@(DataPoint { description = desc, code = c }) =
-        fmap (ResultColumn c desc) (getDataPoint cs d)
+        maybe err ok $ getDataPoint cs d
+  where
+      err = Left $ "Couldn't find data point: " ++ show d
+      ok  = Right . ResultColumn c desc
 
-getResults :: LatestColumns -> [DataPoint] -> Maybe [ResultColumn]
+getResults :: LatestColumns -> [DataPoint] -> Either String [ResultColumn]
 getResults cols = sequence . fmap (getResult cols)
 
 runBot :: FilePath -> GetData ()
 runBot fpath = do
         r <- getWeeklys
-        date <- maybe' "Could not find date" $ getADate r
-        result <- maybe' "Could not find all columns" $ getResults' dataPoints r
+        date <- maybe (throwError "Could not find date") return $ getADate r
+        result <- exceptT $ getResults' dataPoints r
         let out = BL.intercalate "\n" $ getOutRows date result
         liftIO $ BL.writeFile fpath out
   where
-      maybe' e = maybe (throwError e) return
       getResults' = flip getResults
 
 dataPoints :: [DataPoint]

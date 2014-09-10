@@ -33,22 +33,24 @@ getDataPoint sheets (DataPoint { sheet = s, rowI = r, colI = col }) = do
         row <- csv !? r
         row !? col
 
-getResult :: MonthlySpreadsheets -> DataPoint -> Maybe ResultColumn
+getResult :: MonthlySpreadsheets -> DataPoint -> Either String ResultColumn
 getResult sheets d@(DataPoint { description = desc, code = c }) =
-        fmap (ResultColumn c desc) (getDataPoint sheets d)
+        maybe err ok $ getDataPoint sheets d
+  where
+      err = Left $ "Couldn't find data point: " ++ show d
+      ok  = Right . ResultColumn c desc
 
-getResults :: MonthlySpreadsheets -> [DataPoint] -> Maybe [ResultColumn]
+getResults :: MonthlySpreadsheets -> [DataPoint] -> Either String [ResultColumn]
 getResults cols = sequence . fmap (getResult cols)
 
 runBot :: FilePath -> GetData ()
 runBot fpath = do
         r <- getSpreadsheets monthlyURLs
-        result <- maybe' "Could not find all columns" $ getResults' dataPoints r
+        result <- exceptT $ getResults' dataPoints r
         let date = ""
             out = BL.intercalate "\n" $ getOutRows date result
         liftIO $ BL.writeFile fpath out
   where
-      maybe' e = maybe (throwError e) return
       getResults' = flip getResults
 
 monthlyURLs :: [(MonthlySpreadsheet, String)]
