@@ -130,7 +130,7 @@ executable monthly
     bytestring,
     attoparsec,
     transformers,
-    mtl,
+    mtl >= 2.2.1,
     blaze-builder
 
   -- Directories containing source files.
