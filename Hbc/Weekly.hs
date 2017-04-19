@@ -49,41 +49,41 @@ getWeeklys :: GetData LatestColumns
 getWeeklys = M.mapWithKey getLatestColumn <$> getSpreadsheets weeklyURLs
   where
       getLatestColumn :: WeeklySpreadsheet -> CsvData -> Vector ByteString
-      getLatestColumn Table1 csv = let (a, b) = V.splitAt 20 csv in
+      getLatestColumn Table1 !csv = let (a, b) = V.splitAt 20 csv in
                                         latestC a <> latestC b
-      getLatestColumn _      csv = latestC csv
-      latestC csv = fmap (fromMaybe BL.empty . (!? latestI)) csv
+      getLatestColumn _      !csv = latestC csv
+      latestC !csv = fmap (fromMaybe BL.empty . (!? latestI)) csv
         where
-            latestI = V.maxIndexBy (comparing parseDate) (csv ! 0)
-            parseDate = maybeResult . parse parseSimpleDate
+            !latestI = V.maxIndexBy (comparing parseDate) (csv ! 0)
+            !parseDate = maybeResult . parse parseSimpleDate
 
 getDataPoint :: LatestColumns -> DataPoint -> Maybe ByteString
-getDataPoint cs (DataPoint { sheet = s, rowI = i }) = do
-        column <- M.lookup s cs
+getDataPoint !cs !(DataPoint { sheet = s, rowI = i }) = do
+        !column <- M.lookup s cs
         column !? i
 
 getADate :: LatestColumns -> Maybe ByteString
-getADate cs = getDate Table1 <|> getDate Table2 <|> getDate Table3 <|>
+getADate !cs = getDate Table1 <|> getDate Table2 <|> getDate Table3 <|>
               getDate Table7 <|> getDate Table9
   where
       getDate t = M.lookup t cs >>= (!? 0)
 
 getResult :: LatestColumns -> DataPoint -> Either String ResultColumn
-getResult cs d@(DataPoint { description = desc, code = c }) =
+getResult !cs !d@(DataPoint { description = desc, code = c }) =
         maybe err ok $ getDataPoint cs d
   where
-      err = Left $ "Couldn't find data point: " ++ show d
-      ok  = Right . ResultColumn c desc
+      !err = Left $ "Couldn't find data point: " ++ show d
+      !ok  = Right . ResultColumn c desc
 
 getResults :: LatestColumns -> [DataPoint] -> Either String [ResultColumn]
-getResults cols = sequence . fmap (getResult cols)
+getResults !cols = sequence . fmap (getResult cols)
 
 runBot :: FilePath -> GetData ()
 runBot fpath = do
-        r <- getWeeklys
-        date <- maybe (throwError "Could not find date") return $ getADate r
-        result <- exceptT $ getResults' dataPoints r
-        let out = BL.intercalate "\n" $ getOutRows date result
+        !r <- getWeeklys
+        !date <- maybe (throwError "Could not find date") return $ getADate r
+        !result <- exceptT $ getResults' dataPoints r
+        let !out = BL.intercalate "\n" $ getOutRows date result
         liftIO $ BL.writeFile fpath out
   where
       getResults' = flip getResults

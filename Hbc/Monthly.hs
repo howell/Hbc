@@ -53,6 +53,7 @@ runBot fpath = do
   where
       getResults' = flip getResults
 
+
 monthlyURLs :: [(MonthlySpreadsheet, String)]
 monthlyURLs = [
                 (MonthlyTable1, "http://www.eia.gov/petroleum/supply/monthly/csv/table1.csv")

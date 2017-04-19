@@ -18,6 +18,8 @@ import Data.Monoid ((<>), mempty)
 import Data.Word (Word8)
 import Control.Monad.Except
 
+import Control.Concurrent.Async
+
 import Data.Vector (Vector)
 import qualified Data.Map.Strict as M
 import Data.Map.Strict (Map)
@@ -29,8 +31,8 @@ import Data.Csv (decodeWith, HasHeader(..), DecodeOptions(..),
                  defaultDecodeOptions)
 
 
-import Network.HTTP
-import Network.URI (parseURI)
+import Network.Wreq (get, responseBody)
+import Control.Lens ((^.))
 
 type CsvData = Vector (Vector ByteString)
 
@@ -38,27 +40,62 @@ type GetData a = ExceptT String IO a
 
 type Spreadsheets a = Map a CsvData
 
+{-
+getSpreadsheets :: (Ord a) => [(a, String)] -> GetData (Spreadsheets a)
+getSpreadsheets points = do
+        mvars <- liftIO . sequence $ repeat newEmptyMVar
+        let points' = zip points mvars
+        forM_ points' (liftIO . forkIO . fmap (const ()) . runExceptT . getCsv)
+        foldM addEntry M.empty mvars
+  where
+      getCsv ((key, url), mvar) = do
+            !response <- getURL url
+            !csv <- decode response
+            liftIO $ putMVar mvar (key, csv)
+      addEntry acc mvar = do
+          !(!key, !csv) <- liftIO $ takeMVar mvar
+          return $ M.insert key csv acc
+-}
+
+getSpreadsheets :: (Ord a) => [(a, String)] -> GetData (Spreadsheets a)
+getSpreadsheets points | points `seq` False = undefined
+getSpreadsheets points = do
+        !asyncs <- liftIO . sequence . fmap fetch $ points
+        foldM f M.empty asyncs
+  where
+      fetch !(!k, !url) = fmap ((,) k) $ async (getURL' url)
+      f !acc !(!k, !act) = do
+          !response <- liftIO $ wait act
+          !csv <- decode response
+          return $ M.insert k csv acc
+
+
+getURL' :: String -> IO ByteString
+getURL' !url = do
+        r <- get url
+        return $ r ^. responseBody
+
+{-
 getSpreadsheets :: (Ord a) => [(a, String)] -> GetData (Spreadsheets a)
 getSpreadsheets urls = foldM addSpreadsheet M.empty urls
   where
       addSpreadsheet acc (table, url) = do
-          response <- getURL url
-          csv <- decode response
+          !response <- getURL url
+          !csv <- decode response
           return $ M.insert table csv acc
+-}
 
 getURL :: String -> GetData ByteString
-getURL url = case parseURI url of
-                 Nothing  -> throwError $ "Invalid URL: " ++ url
-                 Just uri -> do
-                     resp <- liftIO . simpleHTTP $ defaultGETRequest_ uri
-                     liftIO $ getResponseBody resp
+getURL !url = do
+        r <- liftIO $ get url
+        return $ r ^. responseBody
 
 decode :: ByteString -> GetData CsvData
 decode = exceptT . decodeCommaSeparated
   where
       decodeCommaSeparated = decodeWith opts NoHeader
-      opts = defaultDecodeOptions { decDelimiter = comma }
-      comma = fromIntegral (ord ',')
+      !opts = defaultDecodeOptions { decDelimiter = comma }
+      !comma = fromIntegral (ord ',')
 
 exceptT :: MonadError a m => Either a a1 -> m a1
 exceptT = either throwError return

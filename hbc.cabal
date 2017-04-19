@@ -52,20 +52,22 @@ library
                        Hbc.Monthly,
                        Hbc.SimpleDate
   build-depends:
-    base >=4.7 && <4.8,
-    HTTP == 4000.2.17,
-    cassava,
+    base >=4.7,
+    cassava >= 0.4.1.0,
     vector,
-    network,
     containers,
     text,
     bytestring,
     attoparsec,
     transformers,
     mtl,
-    blaze-builder
+    blaze-builder,
+    async,
+    wreq,
+    lens
 
-  ghc-options: -Wall -fno-warn-unused-do-bind
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+  ghc-prof-options: -auto-all
 
   -- Base language which the package is written in.
   default-language:    Haskell2010
@@ -83,23 +85,25 @@ executable weekly
   -- Other library packages from which modules are imported.
   build-depends:
     hbc,
-    base >=4.7 && <4.8,
-    HTTP == 4000.2.17,
-    cassava,
+    base >=4.7,
+    cassava >= 0.4.1.0,
     vector,
-    network,
     containers,
     text,
     bytestring,
     attoparsec,
     transformers,
     mtl,
-    blaze-builder
+    blaze-builder,
+    async,
+    wreq,
+    lens
 
   -- Directories containing source files.
   -- hs-source-dirs:
 
-  ghc-options: -Wall -fno-warn-unused-do-bind
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+  ghc-prof-options: -auto-all
 
   -- Base language which the package is written in.
   default-language:    Haskell2010
@@ -120,23 +124,25 @@ executable monthly
   -- Other library packages from which modules are imported.
   build-depends:
     hbc,
-    base >=4.7 && <4.8,
-    HTTP == 4000.2.17,
-    cassava,
+    base >=4.7,
+    cassava >= 0.4.1.0,
     vector,
-    network,
     containers,
     text,
     bytestring,
     attoparsec,
     transformers,
     mtl >= 2.2.1,
-    blaze-builder
+    blaze-builder,
+    async,
+    wreq,
+    lens
 
   -- Directories containing source files.
   -- hs-source-dirs:
 
-  ghc-options: -Wall -fno-warn-unused-do-bind
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+  ghc-prof-options: -auto-all
 
   -- Base language which the package is written in.
   default-language:    Haskell2010
