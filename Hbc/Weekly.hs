@@ -91,7 +91,8 @@ runBot fpath = do
 dataPoints :: [DataPoint]
 dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,
                     table9Data3, table3Data1, table7Data1, table9Data6,
-                    table2Data11, table9Data2, table1Data3]
+                    table2Data11, table9Data2, table1Data3,
+                    table9Data7]
   where
       table1Data2 = [ DataPoint Table1 34 "Weekly U.S. Crude Oil Inputs into Refineries  (Thousand Barrels per Day)" "WCRRIUS2"
                     , DataPoint Table1 37 "Weekly U.S. Production of Oxygenates and Renewable Fuels  (Thousand Barrels per Day)" "W_EPOOXR_YPT_NUS_MBBLD"
@@ -185,5 +186,8 @@ dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,
                     ]
       table1Data3 = [
                       DataPoint Table9 522 "Weekly U.S. Exports of Finished Motor Gasoline (Thousand Barrels per Day)" "W_EPM0F_EEX_NUS-Z00_MBBLD"
+                    ]
+      table9Data7 = [
+                      DataPoint Table9 523 "Fuel Ethanol Exports" ""
                     ]
 
