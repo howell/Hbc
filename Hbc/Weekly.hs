@@ -94,9 +94,9 @@ dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,
                     table2Data11, table9Data2, table1Data3,
                     table9Data7]
   where
-      table1Data2 = [ DataPoint Table1 34 "Weekly U.S. Crude Oil Inputs into Refineries  (Thousand Barrels per Day)" "WCRRIUS2"
+      table1Data2 = [ DataPoint Table1 37 "Weekly U.S. Crude Oil Inputs into Refineries  (Thousand Barrels per Day)" "WCRRIUS2"
                     , DataPoint Table1 37 "Weekly U.S. Production of Oxygenates and Renewable Fuels  (Thousand Barrels per Day)" "W_EPOOXR_YPT_NUS_MBBLD"
-                    , DataPoint Table1 38 "Weekly U.S. Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)" "W_EPOOXE_YOP_NUS_MBBLD"
+                    , DataPoint Table1 41 "Weekly U.S. Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)" "W_EPOOXE_YOP_NUS_MBBLD"
                     , DataPoint Table1 21 "Weekly U.S. Crude Oil Field Production  (Thousand Barrels per Day)" "WCRFPUS2"
                     , DataPoint Table1 22 "Weekly Alaska Refinery Field Production of Crude Oil  (Thousand Barrels per Day)" "W_EPC0_FPF_SAK_MBBLD"
                     ]
@@ -105,8 +105,8 @@ dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,
                     , DataPoint Table1 8 "Weekly U.S. Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)" "W_EPOOXE_SAE_NUS_MBBL"
                     , DataPoint Table1 10 "Weekly U.S. Total Distillate Ending Stocks  (Thousand Barrels)" "WDISTUS1"
                     ]
-      table1Data22 = [ DataPoint Table1 47 "Weekly U.S. Finished Motor Gasoline Product Supplied  (Thousand Barrels per Day)" "WGFUPUS2"
-                     , DataPoint Table1 49 "Weekly U.S. Total Distillate Fuel Oil Product Supplied  (Thousand Barrels per Day)" "WGFUPUS2"
+      table1Data22 = [ DataPoint Table1 51 "Weekly U.S. Finished Motor Gasoline Product Supplied  (Thousand Barrels per Day)" "WGFUPUS2"
+                     , DataPoint Table1 53 "Weekly U.S. Total Distillate Fuel Oil Product Supplied  (Thousand Barrels per Day)" "WGFUPUS2"
                      ]
       table2Data1 = [
                       DataPoint Table2 19 "Weekly U.S. Percent Utilization of Refinery Operable Capacity  (Percent)" "WPULEUS3"
@@ -185,9 +185,9 @@ dataPoints = concat [table1Data2, table1Data1, table1Data22, table2Data1,
                     , DataPoint Table9 451 "Weekly Fuel Ethanol Imports West Coast (PADD 5)" ""
                     ]
       table1Data3 = [
-                      DataPoint Table9 522 "Weekly U.S. Exports of Finished Motor Gasoline (Thousand Barrels per Day)" "W_EPM0F_EEX_NUS-Z00_MBBLD"
+                      DataPoint Table9 531 "Weekly U.S. Exports of Finished Motor Gasoline (Thousand Barrels per Day)" "W_EPM0F_EEX_NUS-Z00_MBBLD"
                     ]
       table9Data7 = [
-                      DataPoint Table9 523 "Fuel Ethanol Exports" ""
+                      DataPoint Table9 532 "Fuel Ethanol Exports" ""
                     ]
 
