@@ -1,0 +1,76 @@
+Description,Label,"Table #",Row
+"Weekly U.S. Crude Oil Inputs into Refineries  (Thousand Barrels per Day)",WCRRIUS2,1,38
+"Weekly U.S. Production of Oxygenates and Renewable Fuels  (Thousand Barrels per Day)",W_EPOOXR_YPT_NUS_MBBLD,1,38
+"Weekly U.S. Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_NUS_MBBLD,1,42
+"Weekly U.S. Crude Oil Field Production  (Thousand Barrels per Day)",WCRFPUS2,1,22
+"Weekly Alaska Refinery Field Production of Crude Oil  (Thousand Barrels per Day)",W_EPC0_FPF_SAK_MBBLD,1,23
+"Weekly U.S. Crude Oil Ending Stocks Excluding SPR  (Thousand Barrels)",WCESTUS1,1,3
+"Weekly U.S. Total Gasoline Ending Stocks  (Thousand Barrels)",WGTSTUS1,1,5
+"Weekly U.S. Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_NUS_MBBL,1,9
+"Weekly U.S. Total Distillate Ending Stocks  (Thousand Barrels)",WDISTUS1,1,11
+"Weekly U.S. Finished Motor Gasoline Product Supplied  (Thousand Barrels per Day)",WGFUPUS2,1,52
+"Weekly U.S. Total Distillate Fuel Oil Product Supplied  (Thousand Barrels per Day)",WGFUPUS2,1,54
+"Weekly U.S. Percent Utilization of Refinery Operable Capacity  (Percent)",WPULEUS3,2,20
+"Weekly U.S. Refinery and Blender Adjusted Net Production of Finished Motor Gasoline (Thousand Barrels per Day)",WGFRPUS2,9,65
+"Weekly U.S. Refinery and Blender Net Production of Finished Reformulated Motor Gasoline   (Thousand Barrels per Day)",WGRRPUS2,9,73
+"Weekly U.S. Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_NUS_2,9,79
+"Weekly U.S. Refinery and Blender Net Production of Other Finished Reformulated Motor Gasoline  (Thousand Barrels per Day)",W_EPM0RO_YPT_NUS_MBBLD,9,85
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline  (Thousand Barrels per Day)",WG4TP_NUS_2,9,91
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_NUS_2,9,97
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_NUS_MBBLD,9,103
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Greater than Ed 55  (Thousand Barrels per Day)",W_EPM0CAG55_YPT_NUS_MBBLD,9,109
+"Weekly U.S. Refinery and Blender Net Production Other Finished Conventional Motor Gasoline  (Thousand Barrels per Day)",WG6TP_NUS_2,9,115
+"Weekly U.S. Refinery and Blender Net Production of Distillate Fuel Oil   (Thousand Barrels per Day)",WDIRPUS2,9,139
+"Weekly U.S. Blender Production of Gasoline Reformulated  (Thousand Barrels per Day)",W_EPM0R_YPB_NUS_MBBLD,3,29
+"Weekly U.S. Blender Production of Reformulated Gasoline with Alcohol  (Thousand Barrels per Day)",W_EPM0RA_YPB_NUS_MBBLD,3,30
+"Weekly U.S. Blender Net Production of Finished Motor Gasoline Reformulated Other  (Thousand Barrels per Day)",W_EPM0RO_YPB_NUS_MBBLD,3,31
+"Weekly U.S. Blender Production of Conventional Gasoline  (Thousand Barrels per Day)",W_EPM0C_YPB_NUS_MBBLD,3,32
+"Weekly U.S. Blender Production of Conventional Gasoline with Alcohol  (Thousand Barrels per Day)",W_EPM0CA_YPB_NUS_MBBLD,3,33
+"Weekly U.S. Blender Net Production of Motor Gasoline, Finished, Conventional, Ed 55 & <  (Thousand Barrels per Day)",W_EPM0CAL55_YPB_NUS_MBBLD,3,34
+"Weekly U.S. Blender Net Production of Motor Gasoline, Finished, Conventional, > Ed 55  (Thousand Barrels per Day)",W_EPM0CAG55_YPB_NUS_MBBLD,3,35
+"Weekly U.S. Blender Production of Conventional Gasoline Other  (Thousand Barrels per Day)",W_EPM0CO_YPB_NUS_MBBLD,3,36
+"Weekly U.S. Total Gasoline Imports  (Thousand Barrels per Day)",WGTIMUS2,7,22
+"Weekly U.S. Imports of Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_IM0_NUS-Z00_MBBLD,7,26
+"Weekly U.S. Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_NUS_MBBL,9,275
+"Weekly East Coast (PADD 1) Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_R10_MBBL,9,276
+"Weekly Midwest (PADD 2) Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_R20_MBBL,9,277
+"Weekly Gulf Coast (PADD 3) Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_R30_MBBL,9,278
+"Weekly Rocky Mountain (PADD 4) Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_R40_MBBL,9,279
+"Weekly West Coast (PADD 5) Ending Stocks of Oxygenates Fuel Ethanol  (Thousand Barrels)",W_EPOOXE_SAE_R50_MBBL,9,280
+"Weekly U.S. Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_NUS_MBBLD,9,59
+"Weekly East Coast (PADD 1) Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_R10_MBBLD,9,60
+"Weekly Midwest (PADD 2) Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_R20_MBBLD,9,61
+"Weekly Gulf Coast (PADD 3) Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_R30_MBBLD,9,62
+"Weekly Rocky Mountain (PADD 4) Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_R40_MBBLD,9,63
+"Weekly West Coast (PADD 5) Refinery and Blender Net Input of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YIR_R50_MBBLD,9,64
+"Weekly U.S. Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_NUS_2,9,79
+"Weekly East Coast (PADD 1) Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_R10_2,9,80
+"Weekly Midwest (PADD 2) Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG1TP_R20_2,9,81
+"Weekly Gulf Coast (PADD 3) Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_R30_2,9,82
+"Weekly Rocky Mountain (PADD 4) Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_R40_2,9,83
+"Weekly West Coast (PADD 5) Refinery and Blender Net Production of Finished Reformulated Motor Gasoline with Ethanol   (Thousand Barrels per Day)",WG1TP_R50_2,9,84
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_NUS_2,9,97
+"Weekly East Coast (PADD 1) Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_R10_2,9,98
+"Weekly Midwest (PADD 2) Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol (Thousand Barrels per Day)",WG5TP_R20_2,9,99
+"Weekly Gulf Coast (PADD 3) Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_R30_2,9,100
+"Weekly Rocky Mountain (PADD 4) Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_R40_2,9,101
+"Weekly West Coast (PADD 5) Refinery and Blender Net Production of Finished Conventional Motor Gasoline with Ethanol  (Thousand Barrels per Day)",WG5TP_R50_2,9,102
+"Weekly U.S. Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_NUS_MBBLD,9,103
+"Weekly East Coast (PADD 1) Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_R10_MBBLD,9,104
+"Weekly Midwest (PADD 2) Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_R20_MBBLD,9,105
+"Weekly Gulf Coast (PADD 3) Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_R30_MBBLD,9,106
+"Weekly Rocky Mountain (PADD 4) Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_R40_MBBLD,9,107
+"Weekly West Coast (PADD 5)  Refinery and Blender Net Production of Finished Conventional Motor Gasoline, Ed 55 and Lower  (Thousand Barrels per Day)",W_EPM0CAL55_YPT_R50_MBBLD,9,108
+"Weekly U.S. Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_NUS_MBBLD,2,62
+"Weekly East Coast (PADD 1) Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_R10_MBBLD,2,63
+"Weekly Midwest (PADD 2) Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_R20_MBBLD,2,64
+"Weekly Gulf Coast (PADD 3) Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_R30_MBBLD,2,65
+"Weekly Rocky Mountain (PADD 4) Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_R40_MBBLD,2,66
+"Weekly West Coast (PADD 5) Oxy Plant Production of Oxygenates Fuel Ethanol  (Thousand Barrels per Day)",W_EPOOXE_YOP_R50_MBBLD,2,67
+"Weekly Fuel Ethanol Imports East Coast (PADD 1)",,9,448
+"Weekly Fuel Ethanol Imports Midwest (PADD 2)",,9,449
+"Weekly Fuel Ethanol Imports Gulf Coast (PADD 3)",,9,450
+"Weekly Fuel Ethanol Imports Rocky Mountain (PADD 4)",,9,451
+"Weekly Fuel Ethanol Imports West Coast (PADD 5)",,9,452
+"Weekly U.S. Exports of Finished Motor Gasoline (Thousand Barrels per Day)",W_EPM0F_EEX_NUS-Z00_MBBLD,9,532
+"Fuel Ethanol Exports",,9,533

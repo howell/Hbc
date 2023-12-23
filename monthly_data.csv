@@ -1,0 +1,67 @@
+Description,Label,"Table #",Row,Column
+"U.S. Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_NUS_MBBL,1,19,D
+"U.S. Imports of Fuel Ethanol (Thousand Barrels)",MFEIMUS1,1,19,F
+"U.S. Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_NUS_MBBL,1,19,G
+"U.S. Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_NUS_MBBL,1,19,H
+"U.S. Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIUS1,1,19,I
+"U.S. Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_NUS-Z00_MBBL,1,19,J
+"U.S. Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_NUS_MBBL,1,19,K
+"U.S. Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTUS1,1,19,L
+"U.S. Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPUS1,1,31,K
+"East Coast (PADD 1) Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_R10_MBBL,5,19,D
+"East Coast (PADD 1) Imports of Fuel Ethanol (Thousand Barrels)",MFEIM_R10-Z00_1,5,19,F
+"East Coast (PADD 1) Net Receipts by Pipeline, Tanker, and Barge from Other PADDs of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VNR_R10-Z0P_MBBL,5,19,G
+"East Coast (PADD 1) Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_R10_MBBL,5,19,H
+"East Coast (PADD 1) Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_R10_MBBL,5,19,I
+"East Coast (PADD 1) Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIP11,5,19,J
+"East Coast (PADD 1) Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_R10-Z00_MBBL,5,19,K
+"East Coast (PADD 1) Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_R10_MBBL,5,19,L
+"East Coast (PADD 1) Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTP11,5,19,M
+"East Coast (PADD 1) Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPP11,5,28,L
+"Midwest (PADD 2) Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_R20_MBBL,9,19,D
+"Midwest (PADD 2) Imports of Fuel Ethanol (Thousand Barrels)",MFEIMP21,9,19,F
+"Midwest (PADD 2) Net Receipts by Pipeline, Tanker, and Barge from Other PADDs of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VNR_R20-Z0P_MBBL,9,19,G
+"Midwest (PADD 2) Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_R20_MBBL,9,19,H
+"Midwest (PADD 2) Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_R20_MBBL,9,19,I
+"Midwest (PADD 2) Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIP21,9,19,J
+"Midwest (PADD 2) Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_R20-Z00_MBBL,9,19,K
+"Midwest (PADD 2) Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_R20_MBBL,9,19,L
+"Midwest (PADD 2) Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTP21,9,19,M
+"Midwest (PADD 2) Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPP21,9,28,L
+"Gulf Coast (PADD 3) Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_R30_MBBL,13,19,D
+"Gulf Coast (PADD 3) Imports of Fuel Ethanol (Thousand Barrels)",MFEIMP31,13,19,F
+"Gulf Coast (PADD 3) Net Receipts by Pipeline, Tanker, and Barge from Other PADDs of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VNR_R30-Z0P_MBBL,13,19,G
+"Gulf Coast (PADD 3) Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_R30_MBBL,13,19,H
+"Gulf Coast (PADD 3) Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_R30_MBBL,13,19,I
+"Gulf Coast (PADD 3) Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIP31,13,19,J
+"Gulf Coast (PADD 3) Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_R30-Z00_MBBL,13,19,K
+"Gulf Coast (PADD 3) Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_R30_MBBL,13,19,L
+"Gulf Coast (PADD 3) Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTP31,13,19,M
+"Gulf Coast (PADD 3) Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPP31,13,28,L
+"Rocky Mountain (PADD 4) Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_R40_MBBL,17,19,D
+"Rocky Mountain (PADD 4) Imports of Fuel Ethanol (Thousand Barrels)",MFEIM_R40-Z00_1,17,19,F
+"Rocky Mountain (PADD 4) Net Receipts by Pipeline, Tanker, and Barge from Other PADDs of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VNR_R40-Z0P_MBBL,17,19,G
+"Rocky Mountain (PADD 4) Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_R40_MBBL,17,19,H
+"Rocky Mountain (PADD 4) Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_R40_MBBL,17,19,I
+"Rocky Mountain (PADD 4) Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIP41,17,19,J
+"Rocky Mountain (PADD 4) Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_R40-Z00_MBBL,17,19,K
+"Rocky Mountain (PADD 4) Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_R40_MBBL,17,19,L
+"Rocky Mountain (PADD 4) Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTP41,17,19,M
+"Rocky Mountain (PADD 4) Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPP41,17,28,L
+"West Coast (PADD 5) Renewable Fuels Plant and Oxygenate Plant Net Production of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_YNP_R50_MBBL,21,19,D
+"West Coast (PADD 5) Imports of Fuel Ethanol (Thousand Barrels)",MFEIMP51,21,19,F
+"West Coast (PADD 5) Net Receipts by Pipeline, Tanker, and Barge from Other PADDs of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VNR_R50-Z0P_MBBL,21,19,G
+"West Coast (PADD 5) Supply Adjustment of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VUA_R50_MBBL,21,19,H
+"West Coast (PADD 5) Fuel Ethanol Stock Change (Thousand Barrels)",M_EPOOXE_SCG_R50_MBBL,21,19,I
+"West Coast (PADD 5) Refinery and Blender Net Input of Fuel Ethanol (Thousand Barrels)",MFERIP51,21,19,J
+"West Coast (PADD 5) Exports of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_EEX_R50-Z00_MBBL,21,19,K
+"West Coast (PADD 5) Product Supplied of Fuel Ethanol (Thousand Barrels)",M_EPOOXE_VPP_R50_MBBL,21,19,L
+"West Coast (PADD 5) Ending Stocks of Fuel Ethanol (Thousand Barrels)",MFESTP51,21,19,M
+"West Coast (PADD 5) Product Supplied of Finished Motor Gasoline (Thousand Barrels)",MGFUPP51,21,28,L
+"U.S. Exports of Unfinished Oils (Thousand Barrels)",MUOEXUS1,1,25,J
+"U.S. Exports of Gasoline Blending Components (Thousand Barrels)",MBCEXUS1,1,26,J
+"U.S. Exports of Reformulated Gasoline Blending Components (Thousand Barrels)",MO1EX_NUS-Z00_1,1,27,J
+"U.S. Exports of Conventional Gasoline Blending Components (Thousand Barrels)",MO5EX_NUS-Z00_1,1,28,J
+"U.S. Exports of Finished Motor Gasoline (Thousand Barrels)",MGFEXUS1,1,31,J
+"U.S. Exports of Reformulated Motor Gasoline (Thousand Barrels)",MGREXUS1,1,32,J
+"U.S. Exports of Conventional Motor Gasoline (Thousand Barrels)",MG4EX_NUS-Z00_1,1,33,J

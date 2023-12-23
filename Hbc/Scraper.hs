@@ -11,6 +11,8 @@ module Hbc.Scraper (
                    , ResultColumn(..)
                    , getOutRows
                    , escape
+                   , readDataPoints
+                   , writeDataPoints
                    ) where
 
 import Data.Char (ord)
@@ -21,6 +23,7 @@ import Control.Monad.Except
 import Control.Concurrent.Async
 
 import Data.Vector (Vector)
+import qualified Data.Vector as V
 import qualified Data.Map.Strict as M
 import Data.Map.Strict (Map)
 
@@ -137,3 +140,29 @@ escape !delim !s
     cr     = 13
     sp     = 32
 
+
+readDataPoints :: FilePath -> (Vector ByteString -> Maybe a) -> GetData [a]
+readDataPoints fp convert = do
+       raw <- liftIO $ BL.readFile fp
+       csv <- decode raw
+       let rows = V.tail csv
+       dataPoints <- maybeExceptT "Failed to parse data" (V.mapM convert rows)
+       return $ V.toList dataPoints
+
+maybeExceptT :: MonadError a m => a -> Maybe a1 -> m a1
+maybeExceptT msg = maybe (throwError msg) return
+
+writeDataPoints :: FilePath -> Vector ByteString -> [a] -> (a -> Vector ByteString) -> IO ()
+writeDataPoints fp headers dps convert = BL.writeFile fp csv
+  where
+    csv = formatCsv $ dataPointsToCsv headers dps convert
+
+dataPointsToCsv :: Vector ByteString -> [a] -> (a -> Vector ByteString) -> Vector (Vector ByteString)
+dataPointsToCsv headers dps convert = V.fromList $ headers : map convert dps
+
+formatCsv :: Vector (Vector ByteString) -> ByteString
+formatCsv rows = BL.intercalate "\n" rows'
+  where
+    rows' = encodeRow <$> (V.toList rows)
+    encodeRow r = BL.intercalate "," $ esc <$> V.toList r
+    esc = escape (fromIntegral (ord ','))
