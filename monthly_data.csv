@@ -8,6 +8,7 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports U.S.",M_EPOOXE_EEX_NUS-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,U.S.,Exports
 "Fuel Ethanol Products Supplied U.S.",M_EPOOXE_VPP_NUS_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,U.S.,Products Supplied
 "Fuel Ethanol Ending Stocks U.S.",MFESTUS1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,U.S.,Ending Stocks
+"Finished Motor Gasoline Products Supplied U.S.",M_EPM0F_VPP_NUS_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,U.S.,Products Supplied
 "Fuel Ethanol Biofuels Plant Net Production PADD 1",M_EPOOXE_YNP_R10_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Biofuels Plant Net Production
 "Fuel Ethanol Imports PADD 1",MFEIM_R10-Z00_1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Imports
 "Fuel Ethanol Net Receipts PADD 1",M_EPOOXE_VNR_R10-Z0P_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Net Receipts
@@ -17,6 +18,7 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports PADD 1",M_EPOOXE_EEX_R10-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Exports
 "Fuel Ethanol Products Supplied PADD 1",M_EPOOXE_VPP_R10_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Products Supplied
 "Fuel Ethanol Ending Stocks PADD 1",MFESTP11,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 1,Ending Stocks
+"Finished Motor Gasoline Products Supplied PADD 1",M_EPM0F_VPP_R10_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 1,Products Supplied
 "Fuel Ethanol Biofuels Plant Net Production PADD 2",M_EPOOXE_YNP_R20_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Biofuels Plant Net Production
 "Fuel Ethanol Imports PADD 2",MFEIM_R20-Z00_1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Imports
 "Fuel Ethanol Net Receipts PADD 2",M_EPOOXE_VNR_R20-Z0P_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Net Receipts
@@ -26,6 +28,7 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports PADD 2",M_EPOOXE_EEX_R20-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Exports
 "Fuel Ethanol Products Supplied PADD 2",M_EPOOXE_VPP_R20_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Products Supplied
 "Fuel Ethanol Ending Stocks PADD 2",MFESTP21,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 2,Ending Stocks
+"Finished Motor Gasoline Products Supplied PADD 2",M_EPM0F_VPP_R20_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 2,Products Supplied
 "Fuel Ethanol Biofuels Plant Net Production PADD 3",M_EPOOXE_YNP_R30_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Biofuels Plant Net Production
 "Fuel Ethanol Imports PADD 3",MFEIM_R30-Z00_1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Imports
 "Fuel Ethanol Net Receipts PADD 3",M_EPOOXE_VNR_R30-Z0P_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Net Receipts
@@ -35,6 +38,7 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports PADD 3",M_EPOOXE_EEX_R30-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Exports
 "Fuel Ethanol Products Supplied PADD 3",M_EPOOXE_VPP_R30_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Products Supplied
 "Fuel Ethanol Ending Stocks PADD 3",MFESTP31,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 3,Ending Stocks
+"Finished Motor Gasoline Products Supplied PADD 3",M_EPM0F_VPP_R30_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 3,Products Supplied
 "Fuel Ethanol Biofuels Plant Net Production PADD 4",M_EPOOXE_YNP_R40_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Biofuels Plant Net Production
 "Fuel Ethanol Imports PADD 4",MFEIM_R40-Z00_1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Imports
 "Fuel Ethanol Net Receipts PADD 4",M_EPOOXE_VNR_R40-Z0P_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Net Receipts
@@ -44,6 +48,7 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports PADD 4",M_EPOOXE_EEX_R40-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Exports
 "Fuel Ethanol Products Supplied PADD 4",M_EPOOXE_VPP_R40_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Products Supplied
 "Fuel Ethanol Ending Stocks PADD 4",MFESTP41,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 4,Ending Stocks
+"Finished Motor Gasoline Products Supplied PADD 4",M_EPM0F_VPP_R40_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 4,Products Supplied
 "Fuel Ethanol Biofuels Plant Net Production PADD 5",M_EPOOXE_YNP_R50_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Biofuels Plant Net Production
 "Fuel Ethanol Imports PADD 5",MFEIM_R50-Z00_1,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Imports
 "Fuel Ethanol Net Receipts PADD 5",M_EPOOXE_VNR_R50-Z0P_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Net Receipts
@@ -53,9 +58,4 @@ Description,Label,URL,Row Name,Column Name
 "Fuel Ethanol Exports PADD 5",M_EPOOXE_EEX_R50-Z00_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Exports
 "Fuel Ethanol Products Supplied PADD 5",M_EPOOXE_VPP_R50_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Products Supplied
 "Fuel Ethanol Ending Stocks PADD 5",MFESTP51,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPOOXE_MBBL_M_CUR.htm,PADD 5,Ending Stocks
-"Finished Motor Gasoline Products Supplied U.S.",M_EPM0F_VPP_NUS_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,U.S.,Products Supplied
-"Finished Motor Gasoline Products Supplied PADD 1",M_EPM0F_VPP_R10_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 1,Products Supplied
-"Finished Motor Gasoline Products Supplied PADD 2",M_EPM0F_VPP_R20_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 2,Products Supplied
-"Finished Motor Gasoline Products Supplied PADD 3",M_EPM0F_VPP_R30_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 3,Products Supplied
-"Finished Motor Gasoline Products Supplied PADD 4",M_EPM0F_VPP_R40_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 4,Products Supplied
 "Finished Motor Gasoline Products Supplied PADD 5",M_EPM0F_VPP_R50_MBBL,https://www.eia.gov/dnav/pet/PET_SUM_SND_A_EPM0F_MBBL_M_CUR.htm,PADD 5,Products Supplied
