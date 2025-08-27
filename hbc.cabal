@@ -51,6 +51,7 @@ library
                        Hbc.Weekly,
                        Hbc.Monthly,
                        Hbc.SimpleDate
+  other-modules:       
   build-depends:
     base >=4.7,
     cassava >= 0.4.1.0,
@@ -64,9 +65,10 @@ library
     blaze-builder,
     async,
     wreq,
-    lens
+    lens,
+    tagsoup
 
-  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+  ghc-options: -Wall -fno-warn-unused-do-bind
   ghc-prof-options: -auto-all
 
   -- Base language which the package is written in.
@@ -136,7 +138,8 @@ executable monthly
     blaze-builder,
     async,
     wreq,
-    lens
+    lens,
+    tagsoup
 
   -- Directories containing source files.
   -- hs-source-dirs:
@@ -149,4 +152,137 @@ executable monthly
 
   default-extensions:   OverloadedStrings
                         BangPatterns
+
+test-suite eia-html-tests
+  type: exitcode-stdio-1.0
+  main-is: Hbc/Test/EiaHtmlTests.hs
+  
+  build-depends:
+    hbc,
+    base >=4.7,
+    cassava >= 0.4.1.0,
+    vector,
+    containers,
+    text,
+    bytestring,
+    attoparsec,
+    transformers,
+    mtl >= 2.2.1,
+    blaze-builder,
+    async,
+    wreq,
+    lens,
+    tagsoup,
+    HUnit,
+    test-framework,
+    test-framework-hunit
+
+  ghc-options: -Wall -fno-warn-unused-do-bind
+
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+
+test-suite eia-generalization-tests
+  type: exitcode-stdio-1.0
+  main-is: Hbc/Test/EiaGeneralizationTests.hs
+  
+  build-depends:
+    hbc,
+    base >=4.7,
+    cassava >= 0.4.1.0,
+    vector,
+    containers,
+    text,
+    bytestring,
+    attoparsec,
+    transformers,
+    mtl >= 2.2.1,
+    blaze-builder,
+    async,
+    wreq,
+    lens,
+    tagsoup,
+    HUnit,
+    test-framework,
+    test-framework-hunit
+
+  ghc-options: -Wall -fno-warn-unused-do-bind
+
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+
+executable test-parsing
+  -- .hs or .lhs file containing the Main module.
+  main-is: Hbc/Test/HtmlParsingTest.hs
+  
+  build-depends:
+    hbc,
+    base >=4.7,
+    cassava >= 0.4.1.0,
+    vector,
+    containers,
+    text,
+    bytestring,
+    attoparsec,
+    transformers,
+    mtl >= 2.2.1,
+    blaze-builder,
+    async,
+    wreq,
+    lens,
+    tagsoup
+  
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+  
+executable test-excerpt
+  main-is: test_excerpt.hs
+  
+  build-depends:
+    base >=4.7,
+    tagsoup,
+    hbc
+  
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+
+executable test-fix
+  main-is: test_fix.hs
+  
+  build-depends:
+    base >=4.7,
+    tagsoup
+  
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
+
+executable test-monthly-debug
+  main-is: test_monthly_debug.hs
+  
+  build-depends:
+    hbc,
+    base >=4.7,
+    cassava >= 0.4.1.0,
+    vector,
+    containers,
+    text,
+    bytestring,
+    attoparsec,
+    transformers,
+    mtl >= 2.2.1,
+    blaze-builder,
+    async,
+    wreq,
+    lens,
+    tagsoup
+  
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings BangPatterns
+
+  ghc-options: -Wall -fno-warn-unused-do-bind -rtsopts
 

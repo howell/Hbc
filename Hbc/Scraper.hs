@@ -16,7 +16,7 @@ module Hbc.Scraper (
                    ) where
 
 import Data.Char (ord)
-import Data.Monoid ((<>), mempty)
+import Data.Monoid ()
 import Data.Word (Word8)
 import Control.Monad.Except
 
